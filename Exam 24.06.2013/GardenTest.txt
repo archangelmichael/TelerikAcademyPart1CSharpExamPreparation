@@ -1,0 +1,41 @@
+﻿10
+20
+25
+30
+42
+38
+15
+23
+18
+36
+70
+Total costs: 67.90
+Beans area: 103
+
+30
+39
+50
+60
+15
+77
+18
+36
+28
+39
+65
+Total costs: 83.95
+Insufficient area
+
+0
+0
+50
+0
+0
+100
+200
+50
+30
+100
+65
+Total costs: 175.00
+No area for beans

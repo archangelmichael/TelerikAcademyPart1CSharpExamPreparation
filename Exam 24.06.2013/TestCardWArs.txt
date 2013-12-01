@@ -1,0 +1,52 @@
+﻿2
+2
+2
+2
+A
+A
+5
+2
+K
+2
+5
+6
+A
+First player wins!
+Score: 63
+Games won: 2
+
+1
+10
+10
+10
+K
+Q
+J
+Second player wins!
+Score: 36
+Games won: 1
+
+1
+K
+Q
+J
+10
+X
+10
+X card drawn! Player two wins the match!
+
+2
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+It's a tie!
+Score: 0
