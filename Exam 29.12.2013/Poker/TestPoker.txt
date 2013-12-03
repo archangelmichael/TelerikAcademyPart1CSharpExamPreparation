@@ -1,0 +1,20 @@
+﻿2
+7 
+A
+J
+K	Nothing
+
+4
+2
+A
+3
+5	Straight
+
+8
+J
+J
+8
+8	Full House
+
+
+
