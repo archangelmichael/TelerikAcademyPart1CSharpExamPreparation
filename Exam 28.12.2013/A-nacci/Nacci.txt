@@ -1,0 +1,13 @@
+﻿C
+B
+3
+output	
+C
+BE
+G L
+
+A
+Q
+1
+output
+A

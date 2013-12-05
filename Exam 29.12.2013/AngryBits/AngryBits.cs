@@ -23,7 +23,7 @@ namespace AngryBits
                     matrix[row, col] = int.Parse(numberToString[col].ToString());
                 }
             }
-
+            // second way for input initialization
             //for (int row = 0; row < 8; row++)
             //{
             //    int number = int.Parse(Console.ReadLine());
@@ -32,7 +32,7 @@ namespace AngryBits
             //        matrix[row, col] = (number >> 15 - col) & 1;
             //    }
             //}
-             
+
             //solution
             for (int col = 7; col >= 0; col--)
             {
@@ -40,9 +40,11 @@ namespace AngryBits
                 {
                     if (matrix[row, col] == 1)
                     {
+                        matrix[row, col] = 0;
                         int currentCol = col;
                         int currentRow = row;
                         int path = 0;
+                        bool hit = false;
                         // fly up
                         while (currentRow > 0)
                         {
@@ -52,30 +54,40 @@ namespace AngryBits
                             if (matrix[currentRow, currentCol] == 1)
                             {
                                 DestroyPigs(currentRow, currentCol, path);
-                                matrix[currentRow, currentCol] = 0;
+                                //matrix[currentRow, currentCol] = 0;
+                                hit = true;
                                 break;
                             }
                         }
-                        // fly down       
-                        while (currentRow < 7 && currentCol < 15 && matrix[row,col] == 1) 
+                        // fly down
+                        if (!hit)
                         {
-                            path++;
-                            currentRow++;
-                            currentCol++;
-
-                            if (matrix[currentRow, currentCol] == 1)
+                            while (currentRow < 7 && currentCol < 15)
                             {
-                                DestroyPigs(currentRow,currentCol,path);
-                                matrix[currentRow, currentCol] = 0;
-                                break;
-                            }
+                                path++;
+                                currentRow++;
+                                currentCol++;
 
-                            else if (currentRow == 7 || currentCol == 15)
-                            {
-                                matrix[currentRow, currentCol] = 0;
-                                break;
+                                if (matrix[currentRow, currentCol] == 1)
+                                {
+                                    DestroyPigs(currentRow, currentCol, path);
+                                    //matrix[currentRow, currentCol] = 0;
+                                    break;
+                                }
+
+                                else if (currentRow == 7 || currentCol == 15)
+                                {
+                                    if (matrix[currentRow, currentCol] == 1)
+                                    {
+                                        DestroyPigs(currentRow, currentCol, path);
+                                        //matrix[currentRow, currentCol] = 0;
+                                        break;
+                                    }
+
+                                }
                             }
                         }
+
                     }
                 }
             }
@@ -85,7 +97,7 @@ namespace AngryBits
             {
                 for (int col = 8; col < 16; col++)
                 {
-                    if (matrix [row,col] == 1)
+                    if (matrix[row, col] == 1)
                     {
                         win = false;
                     }
@@ -96,10 +108,11 @@ namespace AngryBits
                 Console.WriteLine(score + " Yes");
             }
             else
-	        {
+            {
                 Console.WriteLine(score + " No");
-	        }
+            }
         }
+
         private static void DestroyPigs(int row, int col, int path)
         {
             int tempScore = 0;
